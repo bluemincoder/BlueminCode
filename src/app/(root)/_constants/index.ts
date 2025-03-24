@@ -14,64 +14,49 @@ type LanguageConfig = Record<
 >;
 
 export const LANGUAGE_CONFIG: LanguageConfig = {
-    javascript: {
-        id: "javascript",
-        label: "JavaScript",
-        logoPath: "/javascript.png",
-        pistonRuntime: { language: "javascript", version: "18.15.0" }, // api that we're gonna be using
-        monacoLanguage: "javascript",
-        defaultCode: `// JavaScript Playground
-const numbers = [1, 2, 3, 4, 5];
+    cpp: {
+        id: "cpp",
+        label: "C++",
+        logoPath: "/cpp.png",
+        pistonRuntime: { language: "cpp", version: "10.2.0" },
+        monacoLanguage: "cpp",
+        defaultCode: `#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <numeric>
 
-// Map numbers to their squares
-const squares = numbers.map(n => n * n);
-console.log('Original numbers:', numbers);
-console.log('Squared numbers:', squares);
-
-// Filter for even numbers
-const evenNumbers = numbers.filter(n => n % 2 === 0);
-console.log('Even numbers:', evenNumbers);
-
-// Calculate sum using reduce
-const sum = numbers.reduce((acc, curr) => acc + curr, 0);
-console.log('Sum of numbers:', sum);`,
-    },
-    typescript: {
-        id: "typescript",
-        label: "TypeScript",
-        logoPath: "/typescript.png",
-        pistonRuntime: { language: "typescript", version: "5.0.3" },
-        monacoLanguage: "typescript",
-        defaultCode: `// TypeScript Playground
-interface NumberArray {
-  numbers: number[];
-  sum(): number;
-  squares(): number[];
-  evenNumbers(): number[];
-}
-
-class MathOperations implements NumberArray {
-  constructor(public numbers: number[]) {}
-
-  sum(): number {
-    return this.numbers.reduce((acc, curr) => acc + curr, 0);
-  }
-
-  squares(): number[] {
-    return this.numbers.map(n => n * n);
-  }
-
-  evenNumbers(): number[] {
-    return this.numbers.filter(n => n % 2 === 0);
-  }
-}
-
-const math = new MathOperations([1, 2, 3, 4, 5]);
-
-console.log('Original numbers:', math.numbers);
-console.log('Squared numbers:', math.squares());
-console.log('Even numbers:', math.evenNumbers());
-console.log('Sum of numbers:', math.sum());`,
+int main() {
+    // Create vector
+    std::vector<int> numbers = {1, 2, 3, 4, 5};
+    
+    // Print original numbers
+    std::cout << "Original numbers: ";
+    for (int n : numbers) std::cout << n << " ";
+    std::cout << std::endl;
+    
+    // Calculate squares
+    std::vector<int> squares;
+    std::transform(numbers.begin(), numbers.end(), 
+                  std::back_inserter(squares),
+                  [](int n) { return n * n; });
+    
+    std::cout << "Squared numbers: ";
+    for (int n : squares) std::cout << n << " ";
+    std::cout << std::endl;
+    
+    // Filter even numbers
+    std::cout << "Even numbers: ";
+    for (int n : numbers) {
+        if (n % 2 == 0) std::cout << n << " ";
+    }
+    std::cout << std::endl;
+    
+    // Calculate sum
+    int sum = std::accumulate(numbers.begin(), numbers.end(), 0);
+    std::cout << "Sum of numbers: " << sum << std::endl;
+    
+    return 0;
+}`,
     },
     python: {
         id: "python",
@@ -136,6 +121,65 @@ print(f"Sum of numbers: {numbers_sum}")`,
       System.out.println();
   }
 }`,
+    },
+    javascript: {
+        id: "javascript",
+        label: "JavaScript",
+        logoPath: "/javascript.png",
+        pistonRuntime: { language: "javascript", version: "18.15.0" }, // api that we're gonna be using
+        monacoLanguage: "javascript",
+        defaultCode: `// JavaScript Playground
+const numbers = [1, 2, 3, 4, 5];
+
+// Map numbers to their squares
+const squares = numbers.map(n => n * n);
+console.log('Original numbers:', numbers);
+console.log('Squared numbers:', squares);
+
+// Filter for even numbers
+const evenNumbers = numbers.filter(n => n % 2 === 0);
+console.log('Even numbers:', evenNumbers);
+
+// Calculate sum using reduce
+const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+console.log('Sum of numbers:', sum);`,
+    },
+    typescript: {
+        id: "typescript",
+        label: "TypeScript",
+        logoPath: "/typescript.png",
+        pistonRuntime: { language: "typescript", version: "5.0.3" },
+        monacoLanguage: "typescript",
+        defaultCode: `// TypeScript Playground
+interface NumberArray {
+  numbers: number[];
+  sum(): number;
+  squares(): number[];
+  evenNumbers(): number[];
+}
+
+class MathOperations implements NumberArray {
+  constructor(public numbers: number[]) {}
+
+  sum(): number {
+    return this.numbers.reduce((acc, curr) => acc + curr, 0);
+  }
+
+  squares(): number[] {
+    return this.numbers.map(n => n * n);
+  }
+
+  evenNumbers(): number[] {
+    return this.numbers.filter(n => n % 2 === 0);
+  }
+}
+
+const math = new MathOperations([1, 2, 3, 4, 5]);
+
+console.log('Original numbers:', math.numbers);
+console.log('Squared numbers:', math.squares());
+console.log('Even numbers:', math.evenNumbers());
+console.log('Sum of numbers:', math.sum());`,
     },
     go: {
         id: "go",
@@ -209,50 +253,6 @@ func main() {
     // Calculate sum
     let sum: i32 = numbers.iter().sum();
     println!("Sum of numbers: {}", sum);
-}`,
-    },
-    cpp: {
-        id: "cpp",
-        label: "C++",
-        logoPath: "/cpp.png",
-        pistonRuntime: { language: "cpp", version: "10.2.0" },
-        monacoLanguage: "cpp",
-        defaultCode: `#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <numeric>
-
-int main() {
-    // Create vector
-    std::vector<int> numbers = {1, 2, 3, 4, 5};
-    
-    // Print original numbers
-    std::cout << "Original numbers: ";
-    for (int n : numbers) std::cout << n << " ";
-    std::cout << std::endl;
-    
-    // Calculate squares
-    std::vector<int> squares;
-    std::transform(numbers.begin(), numbers.end(), 
-                  std::back_inserter(squares),
-                  [](int n) { return n * n; });
-    
-    std::cout << "Squared numbers: ";
-    for (int n : squares) std::cout << n << " ";
-    std::cout << std::endl;
-    
-    // Filter even numbers
-    std::cout << "Even numbers: ";
-    for (int n : numbers) {
-        if (n % 2 == 0) std::cout << n << " ";
-    }
-    std::cout << std::endl;
-    
-    // Calculate sum
-    int sum = std::accumulate(numbers.begin(), numbers.end(), 0);
-    std::cout << "Sum of numbers: " << sum << std::endl;
-    
-    return 0;
 }`,
     },
     csharp: {
