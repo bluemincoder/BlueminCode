@@ -22,7 +22,7 @@ function OutputPanel() {
         await navigator.clipboard.writeText(error || output);
         setIsCopied(true);
 
-        setTimeout(() => setIsCopied(false), 2000);
+        setTimeout(() => setIsCopied(false), 1500);
     };
 
     return (
