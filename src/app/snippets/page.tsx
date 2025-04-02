@@ -5,6 +5,7 @@ import { api } from "../../../convex/_generated/api";
 import { useState } from "react";
 import { div } from "framer-motion/client";
 import SnippetsPageSkeleton from "./_components/SnippetsPageSkeleton";
+import NavigationHeader from "@/components/NavigationHeader";
 
 function SnippetsPage() {
     const snippets = useQuery(api.snippets.getSnippets);
