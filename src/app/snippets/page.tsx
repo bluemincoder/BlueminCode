@@ -8,6 +8,7 @@ import NavigationHeader from "@/components/NavigationHeader";
 
 import { AnimatePresence, motion } from "framer-motion";
 import { BookOpen, Code, Grid, Layers, Search, Tag, X } from "lucide-react";
+import SnippetCard from "./_components/SnippetCard";
 
 function SnippetsPage() {
     const snippets = useQuery(api.snippets.getSnippets);
@@ -53,7 +54,7 @@ function SnippetsPage() {
                 <NavigationHeader />
             </div>
 
-            <div className="relative max-w-8xl mx-auto px-4 py-12">
+            <div className="relative max-w-7xl mx-auto px-4 py-12">
                 {/* Hero */}
                 <div className="text-center max-w-8xl mx-auto mb-16">
                     <motion.div
@@ -69,7 +70,7 @@ function SnippetsPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3 }}
-                        className="text-4xl md:text-7xl font-black bg-gradient-to-b from-gray-300 to-zinc-700 text-transparent bg-clip-text mb-6"
+                        className="text-4xl md:text-6xl font-black bg-gradient-to-b from-gray-300 to-zinc-700 text-transparent bg-clip-text mb-6"
                     >
                         Discover & Share Code Snippets
                     </motion.h1>
@@ -191,11 +192,11 @@ function SnippetsPage() {
                     }`}
                     layout
                 >
-                    {/* <AnimatePresence mode="popLayout">
+                    <AnimatePresence mode="popLayout">
                         {filteredSnippets.map((snippet) => (
                             <SnippetCard key={snippet._id} snippet={snippet} />
                         ))}
-                    </AnimatePresence> */}
+                    </AnimatePresence>
                 </motion.div>
 
                 {/* edge case: empty state */}
