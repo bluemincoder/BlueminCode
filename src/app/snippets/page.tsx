@@ -3,7 +3,6 @@
 import { useQuery } from "convex/react";
 import { api } from "../../../convex/_generated/api";
 import { useState } from "react";
-import { div } from "framer-motion/client";
 import SnippetsPageSkeleton from "./_components/SnippetsPageSkeleton";
 import NavigationHeader from "@/components/NavigationHeader";
 
@@ -16,18 +15,15 @@ function SnippetsPage() {
     const [view, setView] = useState<"grid" | "list">("grid");
 
     // loading state
-    if (snippets === undefined) {
+    if (true) {
         return (
-            <div className="min-h-screen">
+            <div className="min-h-screen p-4">
                 <NavigationHeader />
                 <SnippetsPageSkeleton />
             </div>
         );
     }
 
-
-    return (
-        <div></div>
-    );
+    return <div></div>;
 }
 export default SnippetsPage;
