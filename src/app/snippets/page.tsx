@@ -68,7 +68,7 @@ function SnippetsPage() {
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.1 }}
+                        transition={{ delay: 0.3 }}
                         className="text-4xl md:text-7xl font-black bg-gradient-to-b from-gray-300 to-zinc-700 text-transparent bg-clip-text mb-6"
                     >
                         Discover & Share Code Snippets
@@ -76,7 +76,7 @@ function SnippetsPage() {
                     <motion.p
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ delay: 0.2 }}
+                        transition={{ delay: 0.5 }}
                         className="text-lg text-gray-400 mb-8"
                     >
                         Explore a curated collection of code snippets from the
