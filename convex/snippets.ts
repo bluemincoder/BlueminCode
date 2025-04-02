@@ -30,3 +30,10 @@ export const createSnippet = mutation({
         return snippetId;
     },
 });
+
+export const getSnippets = query({
+    handler: async (ctx) => {
+        const snippets = await ctx.db.query("snippets").order("desc").collect();
+        return snippets;
+    },
+});
