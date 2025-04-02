@@ -19,6 +19,7 @@ const geistMono = localFont({
 export const metadata: Metadata = {
     title: "BlueminCode",
     description: "Share and run code snippets",
+    icons: "/favicon.png",
 };
 
 export default function RootLayout({
@@ -29,13 +30,16 @@ export default function RootLayout({
     return (
         <ClerkProvider>
             <html lang="en">
+                <head>
+                    <link rel="icon" href="/favicon.ico" sizes="any" />
+                    <link rel="apple-touch-icon" href="/favicon.png" />
+                </head>
                 <body
                     className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-gradient-to-b from-gray-900 to-gray-950 text-gray-100 flex flex-col`}
                 >
                     <ConvexClientProvider>{children}</ConvexClientProvider>
 
                     <Footer />
-
                 </body>
             </html>
         </ClerkProvider>
