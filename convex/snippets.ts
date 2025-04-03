@@ -112,3 +112,32 @@ export const deleteSnippet = mutation({
         await ctx.db.delete(args.snippetId);
     },
 });
+
+export const starSnippet = mutation({
+    args: {
+        snippetId: v.id("snippets"),
+    },
+    handler: async (ctx, args) => {
+        const identity = await ctx.auth.getUserIdentity();
+        if (!identity) throw new Error("Not authenticated");
+
+        const existing = await ctx.db
+            .query("stars")
+            .withIndex("by_user_id_and_snippet_id")
+            .filter(
+                (q) =>
+                    q.eq(q.field("userId"), identity.subject) &&
+                    q.eq(q.field("snippetId"), args.snippetId)
+            )
+            .first();
+
+        if (existing) {
+            await ctx.db.delete(existing._id);
+        } else {
+            await ctx.db.insert("stars", {
+                userId: identity.subject,
+                snippetId: args.snippetId,
+            });
+        }
+    },
+});
