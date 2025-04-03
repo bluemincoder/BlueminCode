@@ -22,7 +22,7 @@ function SnippetsPage() {
     if (snippets === undefined) {
         return (
             <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-950">
-                <div className="py-4 px-9">
+                <div className="sticky top-0 z-50 py-4 px-9">
                     <NavigationHeader />
                 </div>
 
@@ -50,7 +50,7 @@ function SnippetsPage() {
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-950">
-            <div className="py-4 px-9">
+            <div className="sticky top-0 z-50 py-4 px-9">
                 <NavigationHeader />
             </div>
 
