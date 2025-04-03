@@ -46,7 +46,7 @@ function Comments({ snippetId }: { snippetId: Id<"snippets"> }) {
     };
 
     return (
-        <div className="bg-[#121218] border border-[#ffffff0a] rounded-2xl overflow-hidden">
+        <div className="bg-[#12121a]/90 border border-[#ffffff0a] rounded-2xl overflow-hidden">
             <div className="px-6 sm:px-8 py-6 border-b border-[#ffffff0a]">
                 <h2 className="text-lg font-semibold text-white flex items-center gap-2">
                     <MessageSquare className="w-5 h-5" />
