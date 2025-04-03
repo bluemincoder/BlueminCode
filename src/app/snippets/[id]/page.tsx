@@ -9,6 +9,7 @@ import NavigationHeader from "@/components/NavigationHeader";
 import { Clock, Code, MessageSquare, User } from "lucide-react";
 import { Editor } from "@monaco-editor/react";
 import { defineMonacoThemes, LANGUAGE_CONFIG } from "@/app/(root)/_constants";
+import CopyButton from "./_components/CopyButton";
 
 function SnippetDetailPage() {
     const snippetId = useParams().id;
@@ -92,8 +93,7 @@ function SnippetDetailPage() {
                                     Source Code
                                 </span>
                             </div>
-                            {/* <CopyButton code={snippet.code} /> */}
-                            <div>CopyButton</div>
+                            <CopyButton code={snippet.code} />
                         </div>
                         <Editor
                             height="600px"
