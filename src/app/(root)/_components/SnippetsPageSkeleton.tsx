@@ -41,7 +41,7 @@ export default function SnippetsPageSkeleton() {
             </div>
 
             {/* Hero Section Skeleton */}
-            <div className="relative max-w-7xl mx-auto px-4 py-12">
+            <div className="relative max-w-7xl mx-auto px-4 py-1">
                 <div className="text-center max-w-3xl mx-auto mb-16 space-y-6">
                     <div className="w-48 h-8 bg-gray-800 rounded-full mx-auto animate-pulse" />
                     <div className="w-96 h-12 bg-gray-800 rounded-xl mx-auto animate-pulse" />

@@ -18,7 +18,7 @@ async function Header() {
     });
 
     return (
-        <div className="relative z-10">
+        <div className="sticky top-4 z-50">
             <div
                 className="flex items-center lg:justify-between justify-center 
         bg-[#0a0a0f]/30 backdrop-blur-xl p-6 mb-4 rounded-3xl"
@@ -56,7 +56,7 @@ async function Header() {
                     {/* Navigation */}
                     <nav className="flex items-center space-x-1">
                         <Link
-                            href="/snippets"
+                            href="/compiler"
                             className="relative group flex items-center gap-2 px-4 py-1.5 rounded-lg text-gray-300 bg-gray-800/50 
                 hover:bg-blue-500/10 border border-gray-800 hover:border-blue-500/50 transition-all duration-300 shadow-lg overflow-hidden"
                         >
@@ -69,7 +69,7 @@ async function Header() {
                                 className="text-sm font-medium relative z-10 group-hover:text-white
                  transition-colors"
                             >
-                                Snippets
+                                Code Editor
                             </span>
                         </Link>
                     </nav>

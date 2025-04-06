@@ -1,11 +1,11 @@
 "use client";
 import Link from "next/link";
 import { Blocks, Code2, Sparkles } from "lucide-react";
-import HeaderProfileBtn from "@/app/(root)/_components/HeaderProfileBtn";
+import HeaderProfileBtn from "@/app/compiler/_components/HeaderProfileBtn";
 
 function NavigationHeader() {
     return (
-        <div className="sticky top-4 z-10">
+        <div className="relative top-4 z-10">
             <div
                 className="flex items-center lg:justify-between justify-center 
         bg-[#0a0a0f]/30 backdrop-blur-xl p-6 mb-4 rounded-3xl"
@@ -43,7 +43,7 @@ function NavigationHeader() {
                     {/* Navigation */}
                     <nav className="flex items-center space-x-1">
                         <Link
-                            href="/snippets"
+                            href="/compiler"
                             className="relative group flex items-center gap-2 px-4 py-1.5 rounded-lg text-gray-300 bg-gray-800/50 
                 hover:bg-blue-500/10 border border-gray-800 hover:border-blue-500/50 transition-all duration-300 shadow-lg overflow-hidden"
                         >
@@ -56,7 +56,7 @@ function NavigationHeader() {
                                 className="text-sm font-medium relative z-10 group-hover:text-white
                  transition-colors"
                             >
-                                Snippets
+                                Code Editor
                             </span>
                         </Link>
                     </nav>
