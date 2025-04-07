@@ -19,7 +19,6 @@ function SnippetCard({ snippet }: { snippet: Snippet }) {
 
     const handleDelete = async () => {
         setIsDeleting(true);
-
         try {
             await deleteSnippet({ snippetId: snippet._id });
         } catch (error) {
@@ -39,9 +38,9 @@ function SnippetCard({ snippet }: { snippet: Snippet }) {
         >
             <Link href={`/${snippet._id}`} className="h-full block">
                 <div
-                    className="relative h-full bg-[#1e1e2e]/80 backdrop-blur-sm rounded-xl 
-          border border-[#313244]/50 hover:border-[#313244] 
-          transition-all duration-300 overflow-hidden"
+                    className="relative h-full bg-gradient-to-br from-[#0a0a0f] to-[#11111d] rounded-xl 
+          border border-[#2d2d42]/50 hover:border-[#3a3a55] 
+          transition-all duration-300 overflow-hidden shadow-2xl"
                 >
                     <div className="p-6">
                         {/* Header */}
@@ -49,13 +48,13 @@ function SnippetCard({ snippet }: { snippet: Snippet }) {
                             <div className="flex items-center gap-3">
                                 <div className="relative">
                                     <div
-                                        className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg blur opacity-20 
+                                        className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-violet-600 rounded-lg blur opacity-20 
                   group-hover:opacity-30 transition-all duration-500"
-                                        area-hidden="true"
+                                        aria-hidden="true"
                                     />
                                     <div
-                                        className="relative p-2 rounded-lg bg-gradient-to-br from-blue-500/10 to-purple-500/10 group-hover:from-blue-500/20
-                   group-hover:to-purple-500/20 transition-all duration-500"
+                                        className="relative p-2 rounded-lg bg-gradient-to-br from-emerald-500/15 to-violet-600/15 
+                   group-hover:from-emerald-500/25 group-hover:to-violet-600/25 transition-all duration-500"
                                     >
                                         <Image
                                             src={`/${snippet.language}.png`}
@@ -67,10 +66,10 @@ function SnippetCard({ snippet }: { snippet: Snippet }) {
                                     </div>
                                 </div>
                                 <div className="space-y-1">
-                                    <span className="px-3 py-1 bg-blue-500/10 text-blue-400 rounded-lg text-xs font-medium">
+                                    <span className="px-3 py-1 bg-emerald-500/20 text-emerald-400 rounded-lg text-xs font-medium">
                                         {snippet.language}
                                     </span>
-                                    <div className="flex items-center gap-2 text-xs text-gray-500">
+                                    <div className="flex items-center gap-2 text-xs text-zinc-400">
                                         <Clock className="size-3" />
                                         {new Date(
                                             snippet._creationTime
@@ -96,7 +95,7 @@ function SnippetCard({ snippet }: { snippet: Snippet }) {
                                   ${
                                       isDeleting
                                           ? "bg-red-500/20 text-red-400 cursor-not-allowed"
-                                          : "bg-gray-500/10 text-gray-400 hover:bg-red-500/10 hover:text-red-400"
+                                          : "bg-zinc-700/20 text-zinc-400 hover:bg-red-500/20 hover:text-red-400"
                                   }
                                 `}
                                         >
@@ -114,13 +113,13 @@ function SnippetCard({ snippet }: { snippet: Snippet }) {
                         {/* Content */}
                         <div className="space-y-4">
                             <div>
-                                <h2 className="text-xl font-semibold text-white mb-2 line-clamp-1 group-hover:text-blue-400 transition-colors">
+                                <h2 className="text-xl font-semibold text-white mb-2 line-clamp-1 group-hover:text-emerald-400 transition-colors">
                                     {snippet.title}
                                 </h2>
-                                <div className="flex items-center gap-3 text-sm text-gray-400">
+                                <div className="flex items-center gap-3 text-sm text-zinc-300">
                                     <div className="flex items-center gap-2">
-                                        <div className="p-1 rounded-md bg-gray-800/50">
-                                            <User className="size-3" />
+                                        <div className="p-1 rounded-md bg-[#1a1a2e]">
+                                            <User className="size-3 text-emerald-400" />
                                         </div>
                                         <span className="truncate max-w-[150px]">
                                             {snippet.userName}
@@ -130,8 +129,8 @@ function SnippetCard({ snippet }: { snippet: Snippet }) {
                             </div>
 
                             <div className="relative group/code">
-                                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/15 to-purple-500/5 rounded-lg opacity-0 group-hover/code:opacity-100 transition-all" />
-                                <pre className="relative bg-black/30 rounded-lg p-4 overflow-hidden text-sm text-gray-300 font-mono line-clamp-5 pb-1">
+                                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-violet-600/5 rounded-lg opacity-0 group-hover/code:opacity-100 transition-all" />
+                                <pre className="relative bg-[#0d0d15] border border-[#1a1a2e]/50 rounded-lg p-4 overflow-hidden text-sm text-zinc-300 font-mono line-clamp-5 pb-1">
                                     {snippet.code}
                                 </pre>
                             </div>

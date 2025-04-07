@@ -33,7 +33,7 @@ const CardSkeleton = () => (
 
 export default function SnippetsPageSkeleton() {
     return (
-        <div className="min-h-screen">
+        <div className="min-h-screen ">
             {/* Ambient background with loading pulse */}
             <div className="fixed inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
                 <div className="absolute top-[20%] -left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl" />
