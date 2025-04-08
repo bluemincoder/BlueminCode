@@ -6,6 +6,8 @@ import { Star } from "lucide-react";
 import { SignedIn, SignedOut } from "@clerk/nextjs";
 import ProPlanView from "./_components/ProPlanView";
 import { ENTERPRISE_FEATURES, FEATURES } from "./_constants";
+import FeatureItem from "./_components/FeatureItem";
+import FeatureCategory from "./_components/FeatureCategory";
 
 async function PricingPage() {
     const user = await currentUser();
@@ -112,7 +114,7 @@ async function PricingPage() {
 
                                 {/* Features grid */}
                                 <div className="grid md:grid-cols-3 gap-12 mb-12">
-                                    {/* <FeatureCategory label="Development">
+                                    <FeatureCategory label="Development">
                                         {FEATURES.development.map(
                                             (feature, idx) => (
                                                 <FeatureItem key={idx}>
@@ -140,7 +142,7 @@ async function PricingPage() {
                                                 </FeatureItem>
                                             )
                                         )}
-                                    </FeatureCategory> */}
+                                    </FeatureCategory>
                                 </div>
 
                                 {/* CTA */}
