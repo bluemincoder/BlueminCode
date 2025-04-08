@@ -1,7 +1,7 @@
 function ProfileHeaderSkeleton() {
     return (
         <div
-            className="relative mb-8 bg-gradient-to-br from-[#12121a] to-[#1a1a2e] rounded-2xl p-8 border
+            className="relative mb-8 rounded-2xl p-8 border
      border-gray-800/50 overflow-hidden"
         >
             <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:32px]" />
