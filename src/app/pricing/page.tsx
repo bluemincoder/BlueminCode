@@ -9,6 +9,8 @@ import FeatureCategory from "./_components/FeatureCategory";
 import FeatureItem from "./_components/FeatureItem";
 import { SignedIn, SignedOut } from "@clerk/nextjs";
 import { Spotlight } from "@/components/spotlight-new";
+import UpgradeButton from "./_components/UpgradeButton";
+import LoginButton from "@/components/LoginButton";
 // import UpgradeButton from "./_components/UpgradeButton";
 // import LoginButton from "@/components/LoginButton";
 
@@ -151,14 +153,13 @@ async function PricingPage() {
 
                                 {/* CTA */}
                                 <div className="flex justify-center">
-                                    {/* <SignedIn>
+                                    <SignedIn>
                                         <UpgradeButton />
                                     </SignedIn>
 
                                     <SignedOut>
                                         <LoginButton />
-                                    </SignedOut> */}
-                                    Button
+                                    </SignedOut>
                                 </div>
                             </div>
                         </div>
