@@ -1,4 +1,4 @@
-import { Boxes, Globe, RefreshCcw, Shield } from "lucide-react";
+import { Boxes, Globe, RefreshCcw, Share2, Shield } from "lucide-react";
 
 export const ENTERPRISE_FEATURES = [
     {

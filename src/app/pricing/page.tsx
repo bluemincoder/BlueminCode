@@ -1,13 +1,16 @@
 import { currentUser } from "@clerk/nextjs/server";
 import { ConvexHttpClient } from "convex/browser";
 import { api } from "../../../convex/_generated/api";
-import NavigationHeader from "@/components/NavigationHeader";
-import { Star } from "lucide-react";
-import { SignedIn, SignedOut } from "@clerk/nextjs";
 import ProPlanView from "./_components/ProPlanView";
+import NavigationHeader from "@/components/NavigationHeader";
 import { ENTERPRISE_FEATURES, FEATURES } from "./_constants";
-import FeatureItem from "./_components/FeatureItem";
+import { Star } from "lucide-react";
 import FeatureCategory from "./_components/FeatureCategory";
+import FeatureItem from "./_components/FeatureItem";
+import { SignedIn, SignedOut } from "@clerk/nextjs";
+import { Spotlight } from "@/components/spotlight-new";
+// import UpgradeButton from "./_components/UpgradeButton";
+// import LoginButton from "@/components/LoginButton";
 
 async function PricingPage() {
     const user = await currentUser();
@@ -29,10 +32,11 @@ async function PricingPage() {
 
             <main className="relative pt-32 pb-24 px-4">
                 <div className="max-w-7xl mx-auto">
+                    <Spotlight />
                     {/* Hero   */}
                     <div className="text-center mb-24">
                         <div className="relative inline-block">
-                            <div className="absolute -inset-px bg-gradient-to-r from-blue-500 to-purple-500 blur-xl opacity-10" />
+                            {/* <div className="absolute -inset-px bg-gradient-to-r from-blue-500 to-purple-500 blur-xl opacity-10" /> */}
                             <h1
                                 className="relative text-5xl md:text-6xl lg:text-7xl font-semibold bg-gradient-to-r
                from-gray-100 to-gray-300 text-transparent bg-clip-text mb-8"
@@ -165,4 +169,6 @@ async function PricingPage() {
     );
 }
 export default PricingPage;
+
+
 
