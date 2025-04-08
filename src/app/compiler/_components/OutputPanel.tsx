@@ -10,6 +10,8 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import RunningCodeSkeleton from "./RunningCodeSkeleton";
+import { SignedIn } from "@clerk/nextjs";
+import RunButton from "./RunButton";
 
 function OutputPanel() {
     const { output, error, isRunning } = useCodeEditorStore();
@@ -26,7 +28,7 @@ function OutputPanel() {
     };
 
     return (
-        <div className="relative bg-[#181825] rounded-xl p-4 ring-1 ring-gray-800/50">
+        <div className="relative bg-[#12121a]/40 rounded-xl p-4 ring-1 ring-gray-800/50">
             {/* Header */}
             <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">
@@ -38,31 +40,37 @@ function OutputPanel() {
                     </span>
                 </div>
 
-                {hasContent && (
-                    <button
-                        onClick={handleCopy}
-                        className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs text-gray-400 hover:text-gray-300 bg-[#1e1e2e] 
+                <div className="flex items-center gap-2">
+                    <SignedIn>
+                        <RunButton />
+                    </SignedIn>
+
+                    {hasContent && (
+                        <button
+                            onClick={handleCopy}
+                            className="flex items-center px-2.5 py-1.5 text-xs text-gray-400 hover:text-gray-300 bg-[#1e1e2e] 
             rounded-lg ring-1 ring-gray-800/50 hover:ring-gray-700/50 transition-all"
-                    >
-                        {isCopied ? (
-                            <>
-                                <CheckCircle className="w-3.5 h-3.5" />
-                                Copied!
-                            </>
-                        ) : (
-                            <>
-                                <Copy className="w-3.5 h-3.5" />
-                                Copy
-                            </>
-                        )}
-                    </button>
-                )}
+                        >
+                            {isCopied ? (
+                                <>
+                                    <CheckCircle className="w-3.5 h-3.5" />
+                                    Copied!
+                                </>
+                            ) : (
+                                <>
+                                    <Copy className="w-3.5 h-3.5" />
+                                    Copy
+                                </>
+                            )}
+                        </button>
+                    )}
+                </div>
             </div>
 
             {/* Output Area */}
             <div className="relative">
                 <div
-                    className="relative bg-[#1e1e2e]/50 backdrop-blur-sm border border-[#313244] 
+                    className="relative bg-[#0a0a0f]/10 backdrop-blur-sm border border-[#313244] 
         rounded-xl p-4 h-[600px] overflow-auto font-mono text-sm"
                 >
                     {isRunning ? (

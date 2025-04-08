@@ -37,7 +37,7 @@ function CommentForm({ isSubmitting, onSubmit }: CommentFormProps) {
 
     return (
         <form onSubmit={handleSubmit} className="mb-8">
-            <div className="bg-[#12121a]/90 rounded-xl border border-[#ffffff13] overflow-hidden">
+            <div className="bg-[#0a0a0f] rounded-xl border border-[#ffffff13] overflow-hidden">
                 {/* Comment form header */}
                 <div className="flex justify-end gap-2 px-4 pt-2">
                     <button
@@ -70,7 +70,7 @@ function CommentForm({ isSubmitting, onSubmit }: CommentFormProps) {
                 )}
 
                 {/* Comment Form Footer */}
-                <div className="flex items-center justify-between gap-4 px-4 py-3 bg-[#12121a]/90 border-t border-[#ffffff0a]">
+                <div className="flex items-center justify-between gap-4 px-4 py-3 bg-[#0a0a0f] border-t border-[#ffffff0a]">
                     <div className="hidden sm:block text-xs text-[#808086] space-y-1">
                         <div className="flex items-center gap-2">
                             <CodeIcon className="w-3.5 h-3.5" />
@@ -84,7 +84,7 @@ function CommentForm({ isSubmitting, onSubmit }: CommentFormProps) {
                     <button
                         type="submit"
                         disabled={isSubmitting || !comment.trim()}
-                        className="flex items-center gap-2 px-4 py-2 bg-[#3b82f6] text-white rounded-lg hover:bg-[#2563eb] disabled:opacity-50 disabled:cursor-not-allowed transition-all ml-auto"
+                        className="flex items-center gap-2 px-4 py-2 bg-[#3b82f6]/40 text-white rounded-lg hover:bg-[#2563eb] disabled:opacity-50 disabled:cursor-not-allowed transition-all ml-auto"
                     >
                         {isSubmitting ? (
                             <>

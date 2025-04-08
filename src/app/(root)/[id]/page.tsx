@@ -24,7 +24,7 @@ function SnippetDetailPage() {
 
     if (snippet === undefined) {
         return (
-            <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-950">
+            <div className="min-h-screen bg-[#0a0a0f]">
                 <div className="sticky top-0 z-50 py-4 px-9">
                     <NavigationHeader />
                 </div>
@@ -35,7 +35,7 @@ function SnippetDetailPage() {
     }
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-950">
+        <div className="min-h-screen bg-[#0a0a0f]">
             <div className="sticky top-0 z-50 py-4 px-9">
                 <NavigationHeader />
             </div>
@@ -43,7 +43,10 @@ function SnippetDetailPage() {
             <main className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="max-w-[1200px] mx-auto">
                     {/* Header */}
-                    <div className="bg-[#12121a]/90 border border-[#ffffff0a] rounded-2xl p-6 sm:p-8 mb-6 backdrop-blur-xl">
+                    <div
+                        className="bg-[#0a0a0f] shadow-2xl 
+        shadow-black/50 border border-gray-800/50 backdrop-blur-xl overflow-hidden rounded-2xl p-6 sm:p-8 mb-6"
+                    >
                         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
                             <div className="flex items-center gap-4">
                                 <div className="flex items-center justify-center size-12 rounded-xl bg-[#ffffff08] p-2.5">
@@ -86,7 +89,10 @@ function SnippetDetailPage() {
                     </div>
 
                     {/* Code Editor */}
-                    <div className="mb-8 rounded-2xl overflow-hidden border border-[#ffffff0a] bg-[#12121a]/90">
+                    <div
+                        className="bg-[#0a0a0f] rounded-3xl shadow-2xl 
+        shadow-black/50 border border-gray-800/50 backdrop-blur-xl overflow-hidden mb-6"
+                    >
                         <div className="flex items-center justify-between px-4 sm:px-6 py-4 border-b border-[#ffffff0a]">
                             <div className="flex items-center gap-2 text-[#808086]">
                                 <Code className="w-4 h-4" />

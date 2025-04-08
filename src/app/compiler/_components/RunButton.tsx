@@ -42,7 +42,7 @@ function RunButton() {
       `}
         >
             {/* bg wit gradient */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-500 rounded-xl opacity-100 transition-opacity group-hover:opacity-90" />
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/40 to-blue-500/40 rounded-xl opacity-100 transition-opacity group-hover:opacity-90" />
 
             <div className="relative flex items-center gap-2.5">
                 {isRunning ? (

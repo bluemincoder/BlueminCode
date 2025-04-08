@@ -69,7 +69,7 @@ function ProfilePage() {
     if (!user && isLoaded) return router.push("/");
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-950">
+        <div className="min-h-screen bg-[#0a0a0f]">
             <div className="sticky top-0 z-50 py-4 px-9">
                 <NavigationHeader />
             </div>

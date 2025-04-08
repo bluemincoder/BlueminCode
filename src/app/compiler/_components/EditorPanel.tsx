@@ -50,7 +50,7 @@ function EditorPanel() {
 
     return (
         <div className="relative">
-            <div className="relative bg-[#12121a]/90 backdrop-blur rounded-xl border border-white/[0.05] p-6">
+            <div className="relative bg-[#12121a]/40 backdrop-blur rounded-xl border border-white/[0.05] p-6">
                 {/* Header */}
                 <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-3">
@@ -73,7 +73,7 @@ function EditorPanel() {
                     </div>
                     <div className="flex items-center gap-3">
                         {/* Font Size Slider */}
-                        <div className="flex items-center gap-3 px-3 py-2 bg-[#1e1e2e] rounded-lg ring-1 ring-white/5">
+                        <div className="flex items-center gap-3 px-3 py-2 bg-[#0f0f1a] rounded-lg ring-1 ring-white/5">
                             <TypeIcon className="size-4 text-gray-400" />
                             <div className="flex items-center gap-3">
                                 <input
@@ -86,7 +86,7 @@ function EditorPanel() {
                                             parseInt(e.target.value)
                                         )
                                     }
-                                    className="w-20 h-1 bg-gray-600 rounded-lg cursor-pointer"
+                                    className="w-20 h-1 bg-blue-900 rounded-lg cursor-pointer"
                                 />
                                 <span className="text-sm font-medium text-gray-400 min-w-[2rem] text-center">
                                     {fontSize}
@@ -98,7 +98,7 @@ function EditorPanel() {
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.95 }}
                             onClick={handleRefresh}
-                            className="p-2 bg-[#1e1e2e] hover:bg-[#2a2a3a] rounded-lg ring-1 ring-white/5 transition-colors"
+                            className="p-2 bg-[#0f0f1a] hover:bg-[#2a2a3a]/50 rounded-lg ring-1 ring-white/5 transition-colors"
                             aria-label="Reset to default code"
                         >
                             <RotateCcwIcon className="size-4 text-gray-400" />
@@ -110,7 +110,7 @@ function EditorPanel() {
                             whileTap={{ scale: 0.98 }}
                             onClick={() => setIsShareDialogOpen(true)}
                             className="inline-flex items-center gap-2 px-4 py-2 rounded-lg overflow-hidden bg-gradient-to-r
-               from-blue-500 to-blue-600 opacity-90 hover:opacity-100 transition-opacity"
+               from-blue-500/40 to-blue-600/40 opacity-90 hover:opacity-100 transition-opacity"
                         >
                             <ShareIcon className="size-4 text-white" />
                             <span className="text-sm font-medium text-white ">

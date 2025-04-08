@@ -46,7 +46,10 @@ function Comments({ snippetId }: { snippetId: Id<"snippets"> }) {
     };
 
     return (
-        <div className="bg-[#12121a]/90 border border-[#ffffff0a] rounded-2xl overflow-hidden">
+        <div
+            className="bg-[#0a0a0f] rounded-3xl shadow-2xl 
+        shadow-black/50 border border-gray-800/50 backdrop-blur-xl overflow-hidden"
+        >
             <div className="px-6 sm:px-8 py-6 border-b border-[#ffffff0a]">
                 <h2 className="text-lg font-semibold text-white flex items-center gap-2">
                     <MessageSquare className="w-5 h-5" />
@@ -66,7 +69,7 @@ function Comments({ snippetId }: { snippetId: Id<"snippets"> }) {
                             Sign in to join the discussion
                         </p>
                         <SignInButton mode="modal">
-                            <button className="px-6 py-2 bg-[#3b82f6] text-white rounded-lg hover:bg-[#2563eb] transition-colors">
+                            <button className="px-6 py-2 bg-[#3b82f6]/40 text-white rounded-lg hover:bg-[#2563eb] transition-colors">
                                 Sign In
                             </button>
                         </SignInButton>

@@ -18,7 +18,7 @@ async function Header() {
     });
 
     return (
-        <div className="sticky top-4 z-50">
+        <div className="sticky top-4 z-10">
             <div
                 className="flex items-center lg:justify-between justify-center 
         bg-[#0a0a0f]/30 backdrop-blur-xl p-6 mb-4 rounded-3xl"
@@ -54,20 +54,32 @@ async function Header() {
                     </Link>
 
                     {/* Navigation */}
-                    <nav className="flex items-center space-x-1">
+                    <nav className="flex items-center space-x-2">
                         <Link
                             href="/compiler"
-                            className="relative group flex items-center gap-2 px-4 py-1.5 rounded-lg text-gray-300 bg-gray-800/50 
-                hover:bg-blue-500/10 border border-gray-800 hover:border-blue-500/50 transition-all duration-300 shadow-lg overflow-hidden"
+                            className="
+                                relative group flex items-center gap-2 px-4 py-2 
+                                rounded-xl 
+                                bg-[#0f0f1a] hover:bg-[#1a1a2e]
+                                border border-white/10 hover:border-blue-500/30
+                                transition-all duration-300
+                                shadow-inner
+                            "
                         >
-                            <div
-                                className="absolute inset-0 bg-gradient-to-r from-blue-500/10 
-                to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity"
+                            <Code2
+                                className="
+                                w-4 h-4 
+                                text-blue-400 
+                                group-hover:text-blue-300 
+                                transition-colors
+                            "
                             />
-                            <Code2 className="w-4 h-4 relative z-10 group-hover:rotate-3 transition-transform" />
                             <span
-                                className="text-sm font-medium relative z-10 group-hover:text-white
-                 transition-colors"
+                                className="
+                                text-sm font-medium 
+                                text-gray-300 group-hover:text-white
+                                transition-colors
+                            "
                             >
                                 Code Editor
                             </span>
@@ -75,6 +87,7 @@ async function Header() {
                     </nav>
                 </div>
 
+                {/* Right Section */}
                 <div className="flex items-center gap-4">
                     <div className="flex items-center gap-3">
                         <ThemeSelector />
@@ -83,25 +96,46 @@ async function Header() {
                         />
                     </div>
 
+                    {/* Pro Button with Enhanced Gradient */}
                     {!convexUser?.isPro && (
                         <Link
                             href="/pricing"
-                            className="flex items-center gap-2 px-4 py-1.5 rounded-lg border border-amber-500/20 hover:border-amber-500/40 bg-gradient-to-r from-amber-500/10 
-                to-orange-500/10 hover:from-amber-500/20 hover:to-orange-500/20 
-                transition-all duration-300"
+                            className="
+                                flex items-center gap-2 px-4 py-2 
+                                rounded-xl 
+                                bg-gradient-to-r from-amber-600/20 to-orange-600/20 
+                                hover:from-amber-600/30 hover:to-orange-600/30
+                                border border-amber-500/30 hover:border-amber-400/50
+                                transition-all duration-300
+                                group
+                            "
                         >
-                            <Sparkles className="w-4 h-4 text-amber-400 hover:text-amber-300" />
-                            <span className="text-sm font-medium text-amber-400/90 hover:text-amber-300">
+                            <Sparkles
+                                className="
+                                w-4 h-4 
+                                text-amber-400 
+                                group-hover:text-amber-300 
+                                transition-colors
+                            "
+                            />
+                            <span
+                                className="
+                                text-sm font-semibold 
+                                bg-gradient-to-r from-amber-300 to-orange-300 
+                                text-transparent bg-clip-text
+                            "
+                            >
                                 Pro
                             </span>
                         </Link>
                     )}
 
-                    <SignedIn>
+                    {/* <SignedIn>
                         <RunButton />
-                    </SignedIn>
+                    </SignedIn> */}
 
-                    <div className="pl-3 border-l border-gray-800">
+                    {/* Profile Section with Subtle Separator */}
+                    <div className="pl-4 border-l border-white/10">
                         <HeaderProfileBtn />
                     </div>
                 </div>

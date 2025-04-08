@@ -45,7 +45,7 @@ function LanguageSelector({ hasAccess }: { hasAccess: boolean }) {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => setIsOpen(!isOpen)}
-                className={`group relative flex items-center gap-3 px-4 py-2.5 bg-[#1e1e2e]/80 
+                className={`group relative flex items-center gap-3 px-4 py-2.5 
       rounded-lg transition-all 
        duration-200 border border-gray-800/50 hover:border-gray-700
        ${!hasAccess && !["cpp", "python", "java"].includes(language) ? "opacity-50 cursor-not-allowed" : ""}`}
@@ -84,7 +84,7 @@ function LanguageSelector({ hasAccess }: { hasAccess: boolean }) {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 8, scale: 0.96 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute top-full left-0 mt-2 w-64 bg-[#1e1e2e]/95 backdrop-blur-xl
+                        className="absolute top-full left-0 mt-2 w-64 bg-[#0f0f1a] backdrop-blur-xl
            rounded-xl border border-[#313244] shadow-2xl py-2 z-50"
                     >
                         <div className="px-3 pb-2 mb-2 border-b border-gray-800/50">
