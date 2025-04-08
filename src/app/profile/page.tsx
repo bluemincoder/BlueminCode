@@ -19,6 +19,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import StarButton from "@/components/StarButton";
+import ProfileHeaderSkeleton from "./_components/ProfileHeaderSkeleton";
+import ProfileHeader from "./_components/ProfileHeader";
 // import CodeBlock from "./_components/CodeBlock";
 
 const TABS = [
@@ -76,7 +78,7 @@ function ProfilePage() {
 
             <div className="max-w-7xl mx-auto px-4 py-12">
                 {/* Profile Header */}
-                {/* {userStats && userData && (
+                {userStats && userData && (
                     <ProfileHeader
                         userStats={userStats}
                         userData={userData}
@@ -86,8 +88,8 @@ function ProfilePage() {
 
                 {(userStats === undefined || !isLoaded) && (
                     <ProfileHeaderSkeleton />
-                )} */}
-                ProfileHeader
+                )}
+                {/* ProfileHeader */}
                 {/* Main content */}
                 <div
                     className="bg-[#0a0a0f] rounded-3xl shadow-2xl 
