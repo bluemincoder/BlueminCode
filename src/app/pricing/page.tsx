@@ -29,7 +29,9 @@ async function PricingPage() {
      selection:text-blue-200"
         >
             <Spotlight />
-            <NavigationHeader />
+            <div className="relative top-0 z-50 py-4 px-9">
+                <NavigationHeader />
+            </div>
 
             {/* main content */}
 
