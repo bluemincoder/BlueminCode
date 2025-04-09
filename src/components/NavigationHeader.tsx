@@ -5,10 +5,10 @@ import HeaderProfileBtn from "@/app/compiler/_components/HeaderProfileBtn";
 
 function NavigationHeader() {
     return (
-        <div className="sticky top-4 z-10">
+        <div className="relative top-4 z-10">
             <div
                 className="flex items-center lg:justify-between justify-center 
-        bg-[#0a0a0f]/30 backdrop-blur-xl p-6 mb-4 rounded-3xl"
+        p-6 mb-4 rounded-3xl bg-transparent"
             >
                 <div className="hidden lg:flex items-center gap-8">
                     <Link

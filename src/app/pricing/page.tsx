@@ -28,13 +28,13 @@ async function PricingPage() {
             className="relative min-h-screen bg-[#0a0a0f] selection:bg-blue-500/20
      selection:text-blue-200"
         >
+            <Spotlight />
             <NavigationHeader />
 
             {/* main content */}
 
             <main className="relative pt-32 pb-24 px-4">
                 <div className="max-w-7xl mx-auto">
-                    <Spotlight />
                     {/* Hero   */}
                     <div className="text-center mb-24">
                         <div className="relative inline-block">
@@ -104,10 +104,10 @@ async function PricingPage() {
                                     </h2>
                                     <div className="flex items-baseline justify-center gap-2 mb-4">
                                         <span className="text-2xl text-gray-400">
-                                            $
+                                            ₹
                                         </span>
                                         <span className="text-6xl font-semibold bg-gradient-to-r from-gray-100 to-gray-300 text-transparent bg-clip-text">
-                                            39
+                                            1999/-
                                         </span>
                                         <span className="text-xl text-gray-400">
                                             one-time
@@ -170,6 +170,3 @@ async function PricingPage() {
     );
 }
 export default PricingPage;
-
-
-
