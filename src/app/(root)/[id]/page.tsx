@@ -26,7 +26,7 @@ function SnippetDetailPage() {
     if (snippet === undefined) {
         return (
             <div className="min-h-screen bg-[#0a0a0f]">
-                <div className="sticky top-0 z-50 py-4 px-9">
+                <div className="relative top-0 z-50 py-4 px-9">
                     <NavigationHeader />
                 </div>
 
@@ -37,7 +37,7 @@ function SnippetDetailPage() {
 
     return (
         <div className="min-h-screen bg-[#0a0a0f]">
-            <div className="sticky top-0 z-50 py-4 px-9">
+            <div className="relative top-0 z-50 py-4 px-9">
                 <NavigationHeader />
             </div>
 
@@ -51,11 +51,14 @@ function SnippetDetailPage() {
                         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
                             <div className="flex items-center gap-4">
                                 <div className="flex items-center justify-center size-12 rounded-xl bg-[#ffffff08] p-2.5">
-                                    <Image
-                                        src={`/${snippet.language}.png`}
-                                        alt={`${snippet.language} logo`}
-                                        className="w-full h-full object-contain"
-                                    />
+                                    <div className="relative w-full h-full">
+                                        <Image
+                                            src={`/${snippet.language}.png`}
+                                            alt={`${snippet.language} logo`}
+                                            fill
+                                            className="object-contain"
+                                        />
+                                    </div>
                                 </div>
                                 <div>
                                     <h1 className="text-xl sm:text-2xl font-semibold text-white mb-2">
@@ -109,7 +112,7 @@ function SnippetDetailPage() {
                                 LANGUAGE_CONFIG[snippet.language].monacoLanguage
                             }
                             value={snippet.code}
-                            theme="vs-dark"
+                            theme="github-dark"
                             beforeMount={defineMonacoThemes}
                             options={{
                                 minimap: { enabled: false },

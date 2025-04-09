@@ -18,7 +18,9 @@ const CodeBlock = ({ language, code }: { language: string; code: string }) => {
                     <Image
                         src={`/${language}.png`}
                         alt={language}
-                        className="size-4 object-contain"
+                        width={16}
+                        height={16}
+                        className="object-contain"
                     />
                     <span className="text-sm text-gray-400">
                         {language || "plaintext"}

@@ -23,7 +23,7 @@ function SnippetsPage() {
     if (snippets === undefined) {
         return (
             <div className="min-h-screen bg-[#0a0a0f]">
-                <div className="sticky top-0 z-50 py-4 px-9">
+                <div className="relative top-0 z-50 py-4 px-9">
                     <NavigationHeader />
                 </div>
 
@@ -139,8 +139,11 @@ function SnippetsPage() {
                                     <Image
                                         src={`/${lang}.png`}
                                         alt={lang}
-                                        className="w-4 h-4 object-contain"
+                                        width={16}
+                                        height={16}
+                                        className="object-contain"
                                     />
+
                                     <span className="text-sm">{lang}</span>
                                 </div>
                             </button>
