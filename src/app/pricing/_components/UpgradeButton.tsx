@@ -1,6 +1,5 @@
 "use client";
 import { Zap } from "lucide-react";
-import Link from "next/link";
 
 import React, { useState } from "react";
 import Script from "next/script";

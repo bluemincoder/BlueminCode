@@ -1,6 +1,7 @@
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import CopyButton from "./CopyButton";
+import Image from "next/image";
 
 const CodeBlock = ({ language, code }: { language: string; code: string }) => {
     const trimmedCode = code
@@ -14,7 +15,7 @@ const CodeBlock = ({ language, code }: { language: string; code: string }) => {
             <div className="flex items-center justify-between px-4 py-2 bg-[#ffffff08]">
                 {/* language indicator with icon */}
                 <div className="flex items-center gap-2">
-                    <img
+                    <Image
                         src={`/${language}.png`}
                         alt={language}
                         className="size-4 object-contain"
