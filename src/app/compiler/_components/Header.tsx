@@ -130,9 +130,9 @@ async function Header() {
                         </Link>
                     )}
 
-                    <SignedIn>
+                    {/* <SignedIn>
                         <RunButton />
-                    </SignedIn>
+                    </SignedIn> */}
 
                     {/* Profile Section with Subtle Separator */}
                     <div className="pl-4 border-l border-white/10">

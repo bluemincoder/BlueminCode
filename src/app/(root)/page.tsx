@@ -72,7 +72,7 @@ function SnippetsPage() {
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full 
+                        className="inline-flex mb-5 items-center gap-2 px-4 py-1.5 rounded-full 
                         bg-white/5 text-sm text-zinc-400 ring-1 ring-white/5"
                     >
                         <BookOpen className="w-4 h-4" />
