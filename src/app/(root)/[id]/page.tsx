@@ -26,7 +26,7 @@ function SnippetDetailPage() {
     if (snippet === undefined) {
         return (
             <div className="min-h-screen bg-[#0a0a0f]">
-                <div className="relative top-0 z-50 py-4 px-9">
+                <div className="relative top-0 px-9">
                     <NavigationHeader />
                 </div>
 
@@ -37,7 +37,7 @@ function SnippetDetailPage() {
 
     return (
         <div className="min-h-screen bg-[#0a0a0f]">
-            <div className="relative top-0 z-50 py-4 px-9">
+            <div className="relative top-0 px-9">
                 <NavigationHeader />
             </div>
 

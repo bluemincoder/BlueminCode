@@ -1,4 +1,5 @@
 "use client";
+import LoginButton from "@/components/LoginButton";
 // import LoginButton from "@/components/LoginButton";
 import { SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import { User } from "lucide-react";
@@ -17,11 +18,7 @@ function HeaderProfileBtn() {
             </UserButton>
 
             <SignedOut>
-                <SignInButton mode="modal">
-                    <button className="px-6 py-2 bg-[#3b82f6]/40 text-white rounded-lg hover:bg-[#2563eb] transition-colors">
-                        Sign In
-                    </button>
-                </SignInButton>
+                <LoginButton />
             </SignedOut>
         </>
     );

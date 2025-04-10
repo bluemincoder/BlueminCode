@@ -10,6 +10,8 @@ import { BookOpen, Code, Grid, Layers, Search, Tag, X } from "lucide-react";
 import SnippetCard from "./_components/SnippetCard";
 import { BackgroundBeams } from "@/components/background-beams";
 import Image from "next/image";
+import TypingText from "@/components/animata/text/typing-text";
+import { SparklesCore } from "@/components/Sparkles";
 
 function SnippetsPage() {
     const snippets = useQuery(api.snippets.getSnippets);
@@ -23,7 +25,7 @@ function SnippetsPage() {
     if (snippets === undefined) {
         return (
             <div className="min-h-screen bg-[#0a0a0f]">
-                <div className="relative top-0 z-50 py-4 px-9">
+                <div className="relative top-0 px-9">
                     <NavigationHeader />
                 </div>
 
@@ -51,9 +53,18 @@ function SnippetsPage() {
 
     return (
         <div className="min-h-screen bg-[#0a0a0f]">
-            <BackgroundBeams />
-
-            <div className="relative top-0 z-50 py-4 px-9">
+            <div className="w-full absolute inset-0 h-screen">
+                <SparklesCore
+                    id="tsparticlesfullpage"
+                    background="transparent"
+                    minSize={0.6}
+                    maxSize={1.4}
+                    particleDensity={70}
+                    className="w-full h-full"
+                    particleColor="#94a3b8"
+                />
+            </div>
+            <div className="relative top-0 px-9">
                 <NavigationHeader />
             </div>
 
@@ -63,25 +74,31 @@ function SnippetsPage() {
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r
-             from-blue-500/10 to-purple-500/10 text-sm text-gray-400 mb-6"
+                        className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full 
+                        bg-white/5 text-sm text-zinc-400 ring-1 ring-white/5"
                     >
                         <BookOpen className="w-4 h-4" />
                         Community Code Library
                     </motion.div>
-                    <motion.h1
+                    <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3 }}
-                        className="text-4xl md:text-6xl font-black bg-gradient-to-br from-emerald-400 via-sky-300 to-violet-400 text-transparent bg-clip-text mb-6"
+                        transition={{ delay: 0.2 }}
+                        className="relative"
                     >
-                        Bluemin-Code
-                    </motion.h1>
+                        <div className="relative w-full bg-transparent flex flex-col items-center justify-center overflow-hidden rounded-md">
+                            <h1 className="md:text-7xl text-3xl lg:text-6xl font-bold text-center relative z-20">
+                                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-white/80 to-white/40">
+                                    Bluemin-Code
+                                </span>
+                            </h1>
+                        </div>
+                    </motion.div>
                     <motion.p
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ delay: 0.5 }}
-                        className="text-lg text-zinc-400 mb-8"
+                        transition={{ delay: 0.4 }}
+                        className="text-lg text-zinc-400 mb-8 max-w-2xl mx-auto"
                     >
                         Discover and share code snippets in a developer-friendly
                         environment

@@ -11,6 +11,9 @@
   "dependencies": {
     "@clerk/nextjs": "^6.12.8",
     "@monaco-editor/react": "^4.7.0",
+    "@tsparticles/engine": "^3.8.1",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.8.1",
     "clsx": "^2.1.1",
     "convex": "^1.21.0",
     "framer-motion": "^12.5.0",

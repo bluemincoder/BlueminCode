@@ -5,7 +5,7 @@ import HeaderProfileBtn from "@/app/compiler/_components/HeaderProfileBtn";
 
 function NavigationHeader() {
     return (
-        <div className="relative top-4 z-10">
+        <div className="relative top-2">
             <div
                 className="flex items-center lg:justify-between justify-center 
         p-6 mb-4 rounded-3xl bg-transparent"

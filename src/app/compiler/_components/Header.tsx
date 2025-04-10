@@ -18,7 +18,7 @@ async function Header() {
     });
 
     return (
-        <div className="relative top-4 z-10">
+        <div className="relative top-2">
             <div
                 className="flex items-center lg:justify-between justify-center 
         bg-[#0a0a0f]/30 backdrop-blur-xl p-6 mb-4 rounded-3xl"

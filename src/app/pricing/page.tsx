@@ -29,7 +29,7 @@ async function PricingPage() {
      selection:text-blue-200"
         >
             <Spotlight />
-            <div className="relative top-0 z-50 py-4 px-9">
+            <div className="relative top-0 px-9">
                 <NavigationHeader />
             </div>
 
@@ -154,7 +154,7 @@ async function PricingPage() {
                                 </div>
 
                                 {/* CTA */}
-                                <div className="flex justify-center">
+                                <div className="flex justify-center shadow-blue-500/20">
                                     <SignedIn>
                                         <UpgradeButton />
                                     </SignedIn>
