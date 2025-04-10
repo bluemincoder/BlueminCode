@@ -8,9 +8,7 @@ import NavigationHeader from "@/components/NavigationHeader";
 import { AnimatePresence, motion } from "framer-motion";
 import { BookOpen, Code, Grid, Layers, Search, Tag, X } from "lucide-react";
 import SnippetCard from "./_components/SnippetCard";
-import { BackgroundBeams } from "@/components/background-beams";
 import Image from "next/image";
-import TypingText from "@/components/animata/text/typing-text";
 import { SparklesCore } from "@/components/Sparkles";
 
 function SnippetsPage() {

@@ -10,7 +10,7 @@ function NavigationHeader() {
                 className="flex items-center lg:justify-between justify-center 
         p-6 mb-4 rounded-3xl bg-transparent"
             >
-                <div className="hidden lg:flex items-center gap-8">
+                <div className="lg:flex items-center gap-8">
                     <Link
                         href="/"
                         className="flex items-center gap-3 group relative"
