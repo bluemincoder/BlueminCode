@@ -96,7 +96,7 @@ function SnippetsPage() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.4 }}
-                        className="text-lg text-zinc-400 mb-8 max-w-2xl mx-auto"
+                        className="md:text-xl text-zinc-400 mb-8 max-w-2xl mx-auto"
                     >
                         Discover and share code snippets in a developer-friendly
                         environment
