@@ -42,10 +42,10 @@ function SnippetCard({ snippet }: { snippet: Snippet }) {
           border border-[#2d2d42]/50 hover:border-[#3a3a55] 
           transition-all duration-300 overflow-hidden shadow-2xl"
                 >
-                    <div className="p-6">
+                    <div className="p-4 sm:p-6">
                         {/* Header */}
-                        <div className="flex items-start justify-between mb-4">
-                            <div className="flex items-center gap-3">
+                        <div className="flex items-start justify-between mb-3 sm:mb-4">
+                            <div className="flex items-center gap-2 sm:gap-3">
                                 <div className="relative">
                                     <div
                                         className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-violet-600 rounded-lg blur opacity-20 
@@ -53,24 +53,24 @@ function SnippetCard({ snippet }: { snippet: Snippet }) {
                                         aria-hidden="true"
                                     />
                                     <div
-                                        className="relative p-2 rounded-lg bg-gradient-to-br from-emerald-500/15 to-violet-600/15 
+                                        className="relative p-1.5 sm:p-2 rounded-lg bg-gradient-to-br from-emerald-500/15 to-violet-600/15 
                    group-hover:from-emerald-500/25 group-hover:to-violet-600/25 transition-all duration-500"
                                     >
                                         <Image
                                             src={`/${snippet.language}.png`}
                                             alt={`${snippet.language} logo`}
-                                            className="w-6 h-6 object-contain relative z-10"
+                                            className="w-5 h-5 sm:w-6 sm:h-6 object-contain relative z-10"
                                             width={24}
                                             height={24}
                                         />
                                     </div>
                                 </div>
-                                <div className="space-y-1">
-                                    <span className="px-3 py-1 bg-emerald-500/20 text-emerald-400 rounded-lg text-xs font-medium">
+                                <div className="space-y-0.5 sm:space-y-1">
+                                    <span className="px-2 sm:px-3 py-0.5 sm:py-1 bg-emerald-500/20 text-emerald-400 rounded-lg text-[10px] sm:text-xs font-medium">
                                         {snippet.language}
                                     </span>
-                                    <div className="flex items-center gap-2 text-xs text-zinc-400">
-                                        <Clock className="size-3" />
+                                    <div className="flex items-center gap-1 sm:gap-2 text-[10px] sm:text-xs text-zinc-400">
+                                        <Clock className="size-2.5 sm:size-3" />
                                         {new Date(
                                             snippet._creationTime
                                         ).toLocaleDateString()}
@@ -78,7 +78,7 @@ function SnippetCard({ snippet }: { snippet: Snippet }) {
                                 </div>
                             </div>
                             <div
-                                className="absolute top-5 right-5 z-10 flex gap-4 items-center"
+                                className="absolute top-3 sm:top-5 right-3 sm:right-5 z-10 flex gap-2 sm:gap-4 items-center"
                                 onClick={(e) => e.preventDefault()}
                             >
                                 <StarButton snippetId={snippet._id} />
@@ -91,7 +91,7 @@ function SnippetCard({ snippet }: { snippet: Snippet }) {
                                         <button
                                             onClick={handleDelete}
                                             disabled={isDeleting}
-                                            className={`group flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition-all duration-200
+                                            className={`group flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg transition-all duration-200
                                   ${
                                       isDeleting
                                           ? "bg-red-500/20 text-red-400 cursor-not-allowed"
@@ -100,9 +100,9 @@ function SnippetCard({ snippet }: { snippet: Snippet }) {
                                 `}
                                         >
                                             {isDeleting ? (
-                                                <div className="size-3.5 border-2 border-red-400/30 border-t-red-400 rounded-full animate-spin" />
+                                                <div className="size-2.5 sm:size-3.5 border-2 border-red-400/30 border-t-red-400 rounded-full animate-spin" />
                                             ) : (
-                                                <Trash2 className="size-3.5" />
+                                                <Trash2 className="size-2.5 sm:size-3.5" />
                                             )}
                                         </button>
                                     </div>
@@ -111,17 +111,17 @@ function SnippetCard({ snippet }: { snippet: Snippet }) {
                         </div>
 
                         {/* Content */}
-                        <div className="space-y-4">
+                        <div className="space-y-3 sm:space-y-4">
                             <div>
-                                <h2 className="text-xl font-semibold text-white mb-2 line-clamp-1 group-hover:text-emerald-400 transition-colors">
+                                <h2 className="text-lg sm:text-xl font-semibold text-white mb-1.5 sm:mb-2 line-clamp-1 group-hover:text-emerald-400 transition-colors">
                                     {snippet.title}
                                 </h2>
-                                <div className="flex items-center gap-3 text-sm text-zinc-300">
-                                    <div className="flex items-center gap-2">
-                                        <div className="p-1 rounded-md bg-[#1a1a2e]">
-                                            <User className="size-3 text-emerald-400" />
+                                <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-zinc-300">
+                                    <div className="flex items-center gap-1.5 sm:gap-2">
+                                        <div className="p-0.5 sm:p-1 rounded-md bg-[#1a1a2e]">
+                                            <User className="size-2.5 sm:size-3 text-emerald-400" />
                                         </div>
-                                        <span className="truncate max-w-[150px]">
+                                        <span className="truncate max-w-[120px] sm:max-w-[150px]">
                                             {snippet.userName}
                                         </span>
                                     </div>
@@ -130,7 +130,7 @@ function SnippetCard({ snippet }: { snippet: Snippet }) {
 
                             <div className="relative group/code">
                                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-violet-600/5 rounded-lg opacity-0 group-hover/code:opacity-100 transition-all" />
-                                <pre className="relative bg-[#0d0d15] border border-[#1a1a2e]/50 rounded-lg p-4 overflow-hidden text-sm text-zinc-300 font-mono line-clamp-5 pb-1">
+                                <pre className="relative bg-[#0d0d15] border border-[#1a1a2e]/50 rounded-lg p-3 sm:p-4 overflow-hidden text-xs sm:text-sm text-zinc-300 font-mono line-clamp-5 pb-1">
                                     {snippet.code}
                                 </pre>
                             </div>

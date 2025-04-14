@@ -69,14 +69,12 @@ function NavigationHeader() {
                         transition-all duration-300"
                     >
                         <Sparkles className="w-3.5 xs:w-3.5 sm:w-4 h-3.5 xs:h-3.5 sm:h-4 text-amber-400 hover:text-amber-300" />
-                        <span className="max-sm:hidden text-xs sm:text-sm font-medium text-amber-400/90 hover:text-amber-300">
+                        <span className="max-lg:hidden text-xs lg:text-sm font-medium text-amber-400/90 hover:text-amber-300">
                             Pro
                         </span>
                     </Link>
                     <div className="">
-                        <div className="">
-                            <HeaderProfileBtn />
-                        </div>
+                        <HeaderProfileBtn />
                     </div>
                 </div>
             </div>

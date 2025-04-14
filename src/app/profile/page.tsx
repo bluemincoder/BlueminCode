@@ -72,11 +72,11 @@ function ProfilePage() {
 
     return (
         <div className="min-h-screen bg-[#0a0a0f]">
-            <div className="relative top-0 px-9">
+            <div className="relative top-0 px-4 sm:px-6 md:px-9">
                 <NavigationHeader />
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 py-12">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-12">
                 {/* Profile Header */}
                 {userStats && userData && (
                     <ProfileHeader
@@ -92,12 +92,12 @@ function ProfilePage() {
                 {/* ProfileHeader */}
                 {/* Main content */}
                 <div
-                    className="bg-[#0a0a0f] rounded-3xl shadow-2xl 
+                    className="bg-[#0a0a0f] rounded-2xl sm:rounded-3xl shadow-2xl 
         shadow-black/50 border border-gray-800/50 backdrop-blur-xl overflow-hidden"
                 >
                     {/* Tabs */}
                     <div className="border-b border-gray-800/50">
-                        <div className="flex space-x-1 p-4">
+                        <div className="flex space-x-1 p-2 sm:p-4">
                             {TABS.map((tab) => (
                                 <button
                                     key={tab.id}
@@ -106,7 +106,7 @@ function ProfilePage() {
                                             tab.id as "executions" | "starred"
                                         )
                                     }
-                                    className={`group flex items-center gap-2 px-6 py-2.5 rounded-lg transition-all duration-200 relative overflow-hidden ${
+                                    className={`group flex items-center gap-1.5 sm:gap-2 px-3 sm:px-6 py-2 sm:py-2.5 rounded-lg transition-all duration-200 relative overflow-hidden ${
                                         activeTab === tab.id
                                             ? "text-blue-400"
                                             : "text-gray-400 hover:text-gray-300"
@@ -123,8 +123,8 @@ function ProfilePage() {
                                             }}
                                         />
                                     )}
-                                    <tab.icon className="w-4 h-4 relative z-10" />
-                                    <span className="text-sm font-medium relative z-10">
+                                    <tab.icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 relative z-10" />
+                                    <span className="text-xs sm:text-sm font-medium relative z-10">
                                         {tab.label}
                                     </span>
                                 </button>
@@ -140,18 +140,18 @@ function ProfilePage() {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.2 }}
-                            className="p-6"
+                            className="p-4 sm:p-6"
                         >
                             {/* ACTIVE TAB IS EXECUTIONS: */}
                             {activeTab === "executions" && (
-                                <div className="space-y-6">
+                                <div className="space-y-4 sm:space-y-6">
                                     {executions?.map((execution) => (
                                         <div
                                             key={execution._id}
                                             className="group rounded-xl overflow-hidden transition-all duration-300 hover:border-blue-500/50 hover:shadow-md hover:shadow-blue-500/50"
                                         >
-                                            <div className="flex items-center justify-between p-4 bg-black/30 border border-gray-800/50 rounded-t-xl">
-                                                <div className="flex items-center gap-4">
+                                            <div className="flex flex-col sm:flex-row sm:items-center justify-between p-3 sm:p-4 bg-black/30 border border-gray-800/50 rounded-t-xl">
+                                                <div className="flex items-center gap-3 sm:gap-4">
                                                     <div className="relative">
                                                         <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg blur opacity-20 group-hover:opacity-30 transition-opacity" />
                                                         <Image
@@ -162,16 +162,17 @@ function ProfilePage() {
                                                             }
                                                             alt=""
                                                             className="rounded-lg relative z-10 object-cover"
-                                                            width={40}
-                                                            height={40}
+                                                            width={32}
+                                                            height={32}
+                                                            className="w-8 h-8 sm:w-10 sm:h-10"
                                                         />
                                                     </div>
                                                     <div className="space-y-1">
-                                                        <div className="flex items-center gap-2">
-                                                            <span className="text-sm font-medium text-white">
+                                                        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+                                                            <span className="text-xs sm:text-sm font-medium text-white">
                                                                 {execution.language.toUpperCase()}
                                                             </span>
-                                                            <span className="text-xs text-gray-400">
+                                                            <span className="text-xs text-gray-400 hidden sm:block">
                                                                 •
                                                             </span>
                                                             <span className="text-xs text-gray-400">
@@ -197,7 +198,7 @@ function ProfilePage() {
                                                 </div>
                                             </div>
 
-                                            <div className="p-4 bg-black/20 rounded-b-xl border border-t-0 border-gray-800/50">
+                                            <div className="p-3 sm:p-4 bg-black/20 rounded-b-xl border border-t-0 border-gray-800/50">
                                                 {/* <CodeBlock
                                                     code={execution.code}
                                                     language={
@@ -207,12 +208,12 @@ function ProfilePage() {
                                                 CodeBlock
                                                 {(execution.output ||
                                                     execution.error) && (
-                                                    <div className="mt-4 p-4 rounded-lg bg-black/40">
-                                                        <h4 className="text-sm font-medium text-gray-400 mb-2">
+                                                    <div className="mt-3 sm:mt-4 p-3 sm:p-4 rounded-lg bg-black/40">
+                                                        <h4 className="text-xs sm:text-sm font-medium text-gray-400 mb-2">
                                                             Output
                                                         </h4>
                                                         <pre
-                                                            className={`text-sm ${
+                                                            className={`text-xs sm:text-sm ${
                                                                 execution.error
                                                                     ? "text-red-400"
                                                                     : "text-green-400"
@@ -228,20 +229,20 @@ function ProfilePage() {
                                     ))}
 
                                     {isLoadingExecutions ? (
-                                        <div className="text-center py-12">
-                                            <Loader2 className="w-12 h-12 text-gray-600 mx-auto mb-4 animate-spin" />
-                                            <h3 className="text-lg font-medium text-gray-400 mb-2">
+                                        <div className="text-center py-8 sm:py-12">
+                                            <Loader2 className="w-8 h-8 sm:w-12 sm:h-12 text-gray-600 mx-auto mb-3 sm:mb-4 animate-spin" />
+                                            <h3 className="text-base sm:text-lg font-medium text-gray-400 mb-2">
                                                 Loading code executions...
                                             </h3>
                                         </div>
                                     ) : (
                                         executions.length === 0 && (
-                                            <div className="text-center py-12">
-                                                <Code className="w-12 h-12 text-gray-600 mx-auto mb-4" />
-                                                <h3 className="text-lg font-medium text-gray-400 mb-2">
+                                            <div className="text-center py-8 sm:py-12">
+                                                <Code className="w-8 h-8 sm:w-12 sm:h-12 text-gray-600 mx-auto mb-3 sm:mb-4" />
+                                                <h3 className="text-base sm:text-lg font-medium text-gray-400 mb-2">
                                                     No code executions yet
                                                 </h3>
-                                                <p className="text-gray-500">
+                                                <p className="text-sm text-gray-500">
                                                     Start coding to see your
                                                     execution history!
                                                 </p>
