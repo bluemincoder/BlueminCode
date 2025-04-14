@@ -11,7 +11,7 @@ function HeaderProfileBtn() {
                 <UserButton.MenuItems>
                     <UserButton.Link
                         label="Profile"
-                        labelIcon={<User className="size-3.5 sm:size-4" />}
+                        labelIcon={<User className="size-4" />}
                         href="/profile"
                     />
                 </UserButton.MenuItems>

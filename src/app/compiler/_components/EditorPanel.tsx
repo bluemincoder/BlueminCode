@@ -50,17 +50,16 @@ function EditorPanel() {
 
     return (
         <div className="relative">
-            <div className="relative bg-[#12121a]/40 backdrop-blur rounded-xl border border-white/[0.05] p-4 sm:p-6">
+            <div className="relative bg-[#12121a]/40 backdrop-blur rounded-xl border border-white/[0.05] p-6">
                 {/* Header */}
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-0 mb-4">
-                    <div className="flex items-center gap-2 sm:gap-3">
-                        <div className="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-[#1e1e2e] ring-1 ring-white/5">
+                <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-3">
+                        <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-[#1e1e2e] ring-1 ring-white/5">
                             <Image
                                 src={"/" + language + ".png"}
                                 alt="Logo"
-                                width={20}
-                                height={20}
-                                className="w-5 h-5 sm:w-6 sm:h-6"
+                                width={24}
+                                height={24}
                             />
                         </div>
                         <div>
@@ -72,11 +71,11 @@ function EditorPanel() {
                             </p>
                         </div>
                     </div>
-                    <div className="flex items-center gap-2 sm:gap-3">
+                    <div className="flex items-center gap-3">
                         {/* Font Size Slider */}
-                        <div className="flex items-center gap-2 sm:gap-3 px-2 sm:px-3 py-1.5 sm:py-2 bg-[#0f0f1a] rounded-lg ring-1 ring-white/5">
-                            <TypeIcon className="size-3.5 sm:size-4 text-gray-400" />
-                            <div className="flex items-center gap-2 sm:gap-3">
+                        <div className="flex items-center gap-3 px-3 py-2 bg-[#0f0f1a] rounded-lg ring-1 ring-white/5">
+                            <TypeIcon className="size-4 text-gray-400" />
+                            <div className="flex items-center gap-3">
                                 <input
                                     type="range"
                                     min="12"
@@ -87,9 +86,9 @@ function EditorPanel() {
                                             parseInt(e.target.value)
                                         )
                                     }
-                                    className="w-16 sm:w-20 h-1 bg-blue-900 rounded-lg cursor-pointer"
+                                    className="w-20 h-1 bg-blue-900 rounded-lg cursor-pointer"
                                 />
-                                <span className="text-xs sm:text-sm font-medium text-gray-400 min-w-[1.5rem] sm:min-w-[2rem] text-center">
+                                <span className="text-sm font-medium text-gray-400 min-w-[2rem] text-center">
                                     {fontSize}
                                 </span>
                             </div>
@@ -99,10 +98,10 @@ function EditorPanel() {
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.95 }}
                             onClick={handleRefresh}
-                            className="p-1.5 sm:p-2 bg-[#0f0f1a] hover:bg-[#2a2a3a]/50 rounded-lg ring-1 ring-white/5 transition-colors"
+                            className="p-2 bg-[#0f0f1a] hover:bg-[#2a2a3a]/50 rounded-lg ring-1 ring-white/5 transition-colors"
                             aria-label="Reset to default code"
                         >
-                            <RotateCcwIcon className="size-3.5 sm:size-4 text-gray-400" />
+                            <RotateCcwIcon className="size-4 text-gray-400" />
                         </motion.button>
 
                         {/* Share Button */}
@@ -110,11 +109,11 @@ function EditorPanel() {
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
                             onClick={() => setIsShareDialogOpen(true)}
-                            className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg overflow-hidden bg-gradient-to-r
+                            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg overflow-hidden bg-gradient-to-r
                from-blue-500/40 to-blue-600/40 opacity-90 hover:opacity-100 transition-opacity"
                         >
-                            <ShareIcon className="size-3.5 sm:size-4 text-white" />
-                            <span className="text-xs sm:text-sm font-medium text-white">
+                            <ShareIcon className="size-4 text-white" />
+                            <span className="text-sm font-medium text-white ">
                                 Share
                             </span>
                         </motion.button>
@@ -136,7 +135,7 @@ function EditorPanel() {
                                 fontSize,
                                 automaticLayout: true,
                                 scrollBeyondLastLine: false,
-                                padding: { top: 12, bottom: 12 },
+                                padding: { top: 16, bottom: 16 },
                                 renderWhitespace: "selection",
                                 fontFamily:
                                     '"Fira Code", "Cascadia Code", Consolas, monospace',
@@ -149,8 +148,8 @@ function EditorPanel() {
                                 letterSpacing: 0.5,
                                 roundedSelection: true,
                                 scrollbar: {
-                                    verticalScrollbarSize: 6,
-                                    horizontalScrollbarSize: 6,
+                                    verticalScrollbarSize: 8,
+                                    horizontalScrollbarSize: 8,
                                 },
                             }}
                         />

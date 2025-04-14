@@ -29,50 +29,51 @@ async function PricingPage() {
      selection:text-blue-200"
         >
             <Spotlight />
-            <div className="relative top-0 px-4 sm:px-6 md:px-9">
+            <div className="relative top-0 px-9">
                 <NavigationHeader />
             </div>
 
             {/* main content */}
 
-            <main className="relative pt-16 sm:pt-24 md:pt-32 pb-12 sm:pb-16 md:pb-24 px-4">
+            <main className="relative pt-32 pb-24 px-4">
                 <div className="max-w-7xl mx-auto">
                     {/* Hero   */}
-                    <div className="text-center mb-12 sm:mb-16 md:mb-24">
+                    <div className="text-center mb-24">
                         <div className="relative inline-block">
+                            {/* <div className="absolute -inset-px bg-gradient-to-r from-blue-500 to-purple-500 blur-xl opacity-10" /> */}
                             <h1
-                                className="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold bg-gradient-to-r
-               from-gray-100 to-gray-300 text-transparent bg-clip-text mb-4 sm:mb-6 md:mb-8"
+                                className="relative text-5xl md:text-6xl lg:text-7xl font-semibold bg-gradient-to-r
+               from-gray-100 to-gray-300 text-transparent bg-clip-text mb-8"
                             >
-                                Elevate Your <br className="hidden sm:block" />
+                                Elevate Your <br />
                                 Development Experience
                             </h1>
                         </div>
-                        <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
+                        <p className="text-xl text-gray-400 max-w-3xl mx-auto">
                             Join the next generation of developers with our
                             professional suite of tools
                         </p>
                     </div>
 
                     {/* Enterprise Features */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16 md:mb-24">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
                         {ENTERPRISE_FEATURES.map((feature) => (
                             <div
                                 key={feature.label}
-                                className="group relative bg-gradient-to-b from-[#12121a] to-[#0a0a0f] rounded-2xl p-4 sm:p-6 hover:transform hover:scale-[1.02] transition-all duration-300"
+                                className="group relative bg-gradient-to-b from-[#12121a] to-[#0a0a0f] rounded-2xl p-6 hover:transform hover:scale-[1.02] transition-all duration-300"
                             >
                                 <div className="relative">
                                     <div
-                                        className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-blue-500/10 to-purple-500/10 
-                  flex items-center justify-center mb-3 sm:mb-4 ring-1 ring-gray-800/60 group-hover:ring-blue-500/20"
+                                        className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/10 to-purple-500/10 
+                  flex items-center justify-center mb-4 ring-1 ring-gray-800/60 group-hover:ring-blue-500/20"
                                     >
-                                        <feature.icon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400" />
+                                        <feature.icon className="w-6 h-6 text-blue-400" />
                                     </div>
 
-                                    <h3 className="text-base sm:text-lg font-medium text-white mb-1.5 sm:mb-2">
+                                    <h3 className="text-lg font-medium text-white mb-2">
                                         {feature.label}
                                     </h3>
-                                    <p className="text-sm sm:text-base text-gray-400">
+                                    <p className="text-gray-400">
                                         {feature.desc}
                                     </p>
                                 </div>
@@ -94,33 +95,33 @@ async function PricingPage() {
                             />
                             <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
 
-                            <div className="relative p-6 sm:p-8 md:p-12">
+                            <div className="relative p-8 md:p-12">
                                 {/* header */}
-                                <div className="text-center mb-8 sm:mb-12">
-                                    <div className="inline-flex p-2 sm:p-3 rounded-xl bg-gradient-to-br from-blue-500/10 to-purple-500/10 ring-1 ring-gray-800/60 mb-4 sm:mb-6">
-                                        <Star className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
+                                <div className="text-center mb-12">
+                                    <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-blue-500/10 to-purple-500/10 ring-1 ring-gray-800/60 mb-6">
+                                        <Star className="w-8 h-8 text-blue-400" />
                                     </div>
-                                    <h2 className="text-2xl sm:text-3xl font-semibold text-white mb-3 sm:mb-4">
+                                    <h2 className="text-3xl font-semibold text-white mb-4">
                                         Lifetime Pro Access
                                     </h2>
-                                    <div className="flex items-baseline justify-center gap-1.5 sm:gap-2 mb-3 sm:mb-4">
-                                        <span className="text-xl sm:text-2xl text-gray-400">
+                                    <div className="flex items-baseline justify-center gap-2 mb-4">
+                                        <span className="text-2xl text-gray-400">
                                             ₹
                                         </span>
-                                        <span className="text-4xl sm:text-5xl md:text-6xl font-semibold bg-gradient-to-r from-gray-100 to-gray-300 text-transparent bg-clip-text">
+                                        <span className="text-6xl font-semibold bg-gradient-to-r from-gray-100 to-gray-300 text-transparent bg-clip-text">
                                             1999/-
                                         </span>
-                                        <span className="text-lg sm:text-xl text-gray-400">
+                                        <span className="text-xl text-gray-400">
                                             one-time
                                         </span>
                                     </div>
-                                    <p className="text-base sm:text-lg text-gray-400">
+                                    <p className="text-gray-400 text-lg">
                                         Unlock the full potential of CodeCraft
                                     </p>
                                 </div>
 
                                 {/* Features grid */}
-                                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-12 mb-8 sm:mb-12">
+                                <div className="grid md:grid-cols-3 gap-12 mb-12">
                                     <FeatureCategory label="Development">
                                         {FEATURES.development.map(
                                             (feature, idx) => (
