@@ -3,10 +3,8 @@ import { ConvexHttpClient } from "convex/browser";
 import { api } from "../../../../convex/_generated/api";
 import Link from "next/link";
 import { Blocks, Code2, Sparkles } from "lucide-react";
-import { SignedIn } from "@clerk/nextjs";
 import ThemeSelector from "./ThemeSelector";
 import LanguageSelector from "./LanguageSelector";
-import RunButton from "./RunButton";
 import HeaderProfileBtn from "./HeaderProfileBtn";
 
 async function Header() {
@@ -18,7 +16,7 @@ async function Header() {
     });
 
     return (
-        <div className="relative top-2">
+        <div className="relative top-2 z-10">
             <div
                 className="flex items-center lg:justify-between justify-center 
         bg-[#0a0a0f]/30 backdrop-blur-xl p-6 mb-4 rounded-3xl"
@@ -81,7 +79,7 @@ async function Header() {
                                 transition-colors
                             "
                             >
-                                Code Editor
+                                Editor
                             </span>
                         </Link>
                     </nav>
@@ -129,10 +127,6 @@ async function Header() {
                             </span>
                         </Link>
                     )}
-
-                    {/* <SignedIn>
-                        <RunButton />
-                    </SignedIn> */}
 
                     {/* Profile Section with Subtle Separator */}
                     <div className="pl-4 border-l border-white/10">
