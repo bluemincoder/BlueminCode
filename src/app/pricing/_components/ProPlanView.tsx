@@ -5,7 +5,7 @@ import Link from "next/link";
 function ProPlanView() {
     return (
         <div className=" bg-[#0a0a0f]">
-            <div className="relative top-0 px-9">
+            <div className="relative top-0 mx-auto">
                 <NavigationHeader />
             </div>
             <div className="relative px-4 h-[80vh] flex items-center justify-center">

@@ -35,7 +35,7 @@ export default function RootLayout({
                     <link rel="apple-touch-icon" href="/favicon.png" />
                 </head>
                 <body
-                    className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-gradient-to-b from-gray-900 to-gray-950 text-gray-100 flex flex-col mx-auto max-w-7xl`}
+                    className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen text-gray-100 flex flex-col mx-auto`}
                 >
                     <ConvexClientProvider>{children}</ConvexClientProvider>
 

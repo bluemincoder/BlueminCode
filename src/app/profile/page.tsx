@@ -72,7 +72,7 @@ function ProfilePage() {
 
     return (
         <div className="min-h-screen bg-[#0a0a0f]">
-            <div className="relative top-0 px-9">
+            <div className="relative top-0 mx-auto">
                 <NavigationHeader />
             </div>
 

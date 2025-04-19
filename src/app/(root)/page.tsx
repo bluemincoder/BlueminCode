@@ -23,7 +23,7 @@ function SnippetsPage() {
     if (snippets === undefined) {
         return (
             <div className="min-h-screen bg-[#0a0a0f]">
-                <div className="relative top-0 px-9">
+                <div className="relative top-0 mx-auto">
                     <NavigationHeader />
                 </div>
 
@@ -62,11 +62,11 @@ function SnippetsPage() {
                     particleColor="#94a3b8"
                 />
             </div>
-            <div className="relative top-0 px-9">
+            <div className="relative top-0 mx-auto">
                 <NavigationHeader />
             </div>
 
-            <div className="relative max-w-7xl mx-auto px-4 py-1">
+            <div className="relative max-w-7xl mx-auto py-1 px-5">
                 {/* Hero */}
                 <div className="text-center max-w-8xl mx-auto mb-16">
                     <motion.div
@@ -85,7 +85,7 @@ function SnippetsPage() {
                         className="relative"
                     >
                         <div className="relative w-full bg-transparent flex flex-col items-center justify-center overflow-hidden rounded-md">
-                            <h1 className="md:text-7xl text-3xl lg:text-6xl font-bold text-center relative z-20">
+                            <h1 className="md:text-7xl text-5xl xl:text-8xl lg:text-6xl font-bold text-center relative z-20 tracking-tighter">
                                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-white/80 to-white/40">
                                     Bluemin-Code
                                 </span>

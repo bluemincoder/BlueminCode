@@ -29,7 +29,7 @@ async function PricingPage() {
      selection:text-blue-200"
         >
             <Spotlight />
-            <div className="relative top-0 px-9">
+            <div className="relative top-0 mx-auto">
                 <NavigationHeader />
             </div>
 
