@@ -125,81 +125,87 @@ function SnippetsPage() {
                     </div>
 
                     {/* Filters Bar */}
-                    <div className="flex flex-wrap items-center gap-4">
-                        <div className="flex items-center gap-2 px-4 py-2 bg-[#1a1a2e]/40 rounded-lg ring-1 ring-[#2d2d42]">
-                            <Tag className="w-4 h-4 text-emerald-400" />
-                            <span className="text-sm text-zinc-400">
+                    <div className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-3 sm:gap-4">
+                        <div className="flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-[#1a1a2e]/40 rounded-lg ring-1 ring-[#2d2d42]">
+                            <Tag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-400" />
+                            <span className="text-xs sm:text-sm text-zinc-400">
                                 Languages:
                             </span>
                         </div>
 
-                        {popularLanguages.map((lang) => (
-                            <button
-                                key={lang}
-                                onClick={() =>
-                                    setSelectedLanguage(
-                                        lang === selectedLanguage ? null : lang
-                                    )
-                                }
-                                className={`
-                    group relative px-3 py-1.5 rounded-lg transition-all duration-200
-                    ${
-                        selectedLanguage === lang
-                            ? "text-emerald-400 bg-emerald-500/10 ring-2 ring-emerald-500/50"
-                            : "text-zinc-400 hover:text-zinc-300 bg-[#1a1a2e]/40 hover:bg-[#262637] ring-1 ring-[#2d2d42]"
-                    }
-                  `}
-                            >
-                                <div className="flex items-center gap-2">
-                                    <Image
-                                        src={`/${lang}.png`}
-                                        alt={lang}
-                                        width={16}
-                                        height={16}
-                                        className="object-contain"
-                                    />
+                        <div className="flex flex-wrap gap-2 sm:gap-3">
+                            {popularLanguages.map((lang) => (
+                                <button
+                                    key={lang}
+                                    onClick={() =>
+                                        setSelectedLanguage(
+                                            lang === selectedLanguage
+                                                ? null
+                                                : lang
+                                        )
+                                    }
+                                    className={`
+                        group relative px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg transition-all duration-200
+                        ${
+                            selectedLanguage === lang
+                                ? "text-emerald-400 bg-emerald-500/10 ring-2 ring-emerald-500/50"
+                                : "text-zinc-400 hover:text-zinc-300 bg-[#1a1a2e]/40 hover:bg-[#262637] ring-1 ring-[#2d2d42]"
+                        }
+                      `}
+                                >
+                                    <div className="flex items-center gap-1.5 sm:gap-2">
+                                        <Image
+                                            src={`/${lang}.png`}
+                                            alt={lang}
+                                            width={16}
+                                            height={16}
+                                            className="w-3.5 h-3.5 sm:w-4 sm:h-4 object-contain"
+                                        />
 
-                                    <span className="text-sm">{lang}</span>
-                                </div>
-                            </button>
-                        ))}
+                                        <span className="text-xs sm:text-sm">
+                                            {lang}
+                                        </span>
+                                    </div>
+                                </button>
+                            ))}
 
-                        {selectedLanguage && (
-                            <button
-                                onClick={() => setSelectedLanguage(null)}
-                                className="flex items-center gap-1 px-2 py-1 text-xs text-zinc-400 hover:text-zinc-300 transition-colors"
-                            >
-                                <X className="w-3 h-3" />
-                                Clear
-                            </button>
-                        )}
+                            {selectedLanguage && (
+                                <button
+                                    onClick={() => setSelectedLanguage(null)}
+                                    className="flex items-center gap-1 px-2 py-1 text-xs text-zinc-400 hover:text-zinc-300 transition-colors"
+                                >
+                                    <X className="w-3 h-3" />
+                                    Clear
+                                </button>
+                            )}
+                        </div>
 
-                        <div className="ml-auto flex items-center gap-3">
-                            <span className="text-sm text-zinc-500">
+                        <div className="w-full sm:w-auto sm:ml-auto flex items-center justify-between sm:justify-end gap-2 sm:gap-3 mt-3 sm:mt-0">
+                            <span className="text-xs sm:text-sm text-zinc-500">
                                 {filteredSnippets.length} snippets found
                             </span>
 
                             {/* View Toggle */}
-                            <div className="flex items-center gap-1 p-1 bg-[#1a1a2e]/40 rounded-lg ring-1 ring-[#2d2d42]">
+                            <div className="flex items-center gap-1 p-0.5 sm:p-1 bg-[#1a1a2e]/40 rounded-lg ring-1 ring-[#2d2d42]">
                                 <button
                                     onClick={() => setView("grid")}
-                                    className={`p-2 rounded-md transition-all ${
+                                    className={`p-1.5 sm:p-2 rounded-md transition-all ${
                                         view === "grid"
                                             ? "bg-emerald-500/20 text-emerald-400"
                                             : "text-zinc-400 hover:text-zinc-300 hover:bg-[#262637]"
                                     }`}
                                 >
-                                    <Grid className="w-4 h-4" />
+                                    <Grid className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                                 </button>
                                 <button
                                     onClick={() => setView("list")}
-                                    className={`p-2 rounded-md transition-all ${
+                                    className={`p-1.5 sm:p-2 rounded-md transition-all ${
                                         view === "list"
                                             ? "bg-emerald-500/20 text-emerald-400"
                                             : "text-zinc-400 hover:text-zinc-300 hover:bg-[#262637]"
                                     }`}
                                 >
-                                    <Layers className="w-4 h-4" />
+                                    <Layers className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                                 </button>
                             </div>
                         </div>
@@ -210,8 +216,8 @@ function SnippetsPage() {
                 <motion.div
                     className={`grid gap-6 ${
                         view === "grid"
-                            ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-                            : "grid-cols-1 max-w-3xl mx-auto"
+                            ? "grid-cols-2 sm:grid-cols-2 lg:grid-cols-3"
+                            : "grid-cols-1 max-w-3xl mx-auto px-4"
                     }`}
                     layout
                 >
