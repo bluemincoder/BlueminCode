@@ -79,7 +79,7 @@ Transparent pricing tiers with feature comparison to help users choose the right
 ### Profile
 
 ![Profile](/public/Profile.png)
-Premium features available to Pro subscribers for an enhanced coding experience.
+Manage your personal information, view coding activity, and track your progress.
 
 ---
 
